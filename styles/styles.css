@@ -4,9 +4,14 @@
 
 
 body {
-    color: lavenderblush
+    background-color: lavenderblush;
+    color: mediumpurple;
 }
 
 h1 {
+    text-align: center;
+}
+
+h2 {
     text-align: center;
 }
