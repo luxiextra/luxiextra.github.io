@@ -1,17 +1,118 @@
 :root {
     font-family: 'Noto Sans', sans-serif;
+    --sidebar-width: 15%;
+}
+
+html {
+    overflow-x: hidden;
+    max-width: 100%;
 }
 
 
 body {
-    background-color: lavenderblush;
-    color: mediumpurple;
+    width: 100vw;
+    height: 100vh;
+
+    margin: 0px;
+    background-color: mediumpurple;
+    color: white;
 }
 
 h1 {
-    text-align: center;
+    text-align: left;
+    padding-left: 10%;
 }
 
 h2 {
     text-align: center;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--sidebar-width);
+    height: 100%;
+    background-color: #7e2e7b;
+    overflow-y: auto;
+
+    display: flex;
+    flex-direction: column;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.main {
+    margin-left: var(--sidebar-width);
+}
+
+.project-tile-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15% 5%;
+
+    margin: 5% 4% 0% 4%;
+    
+    align-items: center;
+    justify-content: center;
+}
+
+.project-tile {
+    aspect-ratio: 4 / 3;
+    width: 100%;
+    margin: auto;
+
+    display: flex;
+    flex-direction: row;
+    transition: transform 0.3s ease-in-out;
+}
+
+.project-tile.hover-effect {
+    transform: scale(1.1);
+}
+
+.project-tile h3 {
+    border-bottom: 0.25vh solid white;
+    margin: 5% 0% 0% 0%;
+    padding: 0% 0% 5% 0%;
+    font-size: 1.25vw;
+    text-align: center;
+}
+
+.project-tile p {
+    text-align: center;
+    font-size: 0.85vw;
+
+}
+
+.project-tile-showcase {
+    width: 70%;
+    background-color: rgb(32, 32, 32);
+    border-radius: 5%;
+
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+
+}
+
+.project-tile-details {
+    align-self: center;
+    height: 90%;
+
+    border-top-right-radius: 5%;
+    border-bottom-right-radius: 5%;
+
+    background-repeat: repeat;
+    background-size: contain;
+
+    --svg-url: url(../images/shapes/contributionsBox.svg);
+    --svg-fill: rgb(79, 37, 62);
+}
+
+
+.project-tile-details h3 {
+    font-size: 1vw;
+    border-bottom: 0.25vh dotted white;
 }
