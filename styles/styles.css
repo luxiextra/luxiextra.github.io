@@ -107,8 +107,9 @@ h2 {
     background-repeat: repeat;
     background-size: contain;
 
-    --svg-url: url(../images/shapes/contributionsBox.svg);
+    --svg-url: url('../images/shapes/contributionsBox.svg');
     --svg-fill: rgb(79, 37, 62);
+    --svg-fill-secondary: rgb(181, 110, 152);
 }
 
 

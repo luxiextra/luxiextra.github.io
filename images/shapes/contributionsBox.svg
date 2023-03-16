@@ -1,13 +1,13 @@
 <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect width="100" height="100" fill="#1E1E1E"/>
 <g clip-path="url(#clip0_0_1)">
-<rect width="100" height="100" fill="#673A5A"/>
-<path d="M24.6891 0L49.6891 50H-0.31089L24.6891 0Z"/>
-<path d="M50 50L75 100H25L50 50Z"/>
-<path d="M100 50L125 100H75L100 50Z" />
-<path d="M75 0L100 50H50L75 0Z"/>
-<path d="M24.6891 0L49.6891 50H-0.31089L24.6891 0Z" />
-<path d="M-1.65941e-06 50L25 100H-25L-1.65941e-06 50Z" />
+<rect id="secondary" width="100" height="100" fill="#673A5A"/>
+<path id="primary" d="M24.6891 0L49.6891 50H-0.31089L24.6891 0Z"/>
+<path id="primary" d="M50 50L75 100H25L50 50Z"/>
+<path id="primary" d="M100 50L125 100H75L100 50Z" />
+<path id="primary" d="M75 0L100 50H50L75 0Z"/>
+<path id="primary" d="M24.6891 0L49.6891 50H-0.31089L24.6891 0Z" />
+<path id="primary" d="M-1.65941e-06 50L25 100H-25L-1.65941e-06 50Z" />
 </g>
 <defs>
 <clipPath id="clip0_0_1">

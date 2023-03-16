@@ -10,15 +10,25 @@ async function setSvgBackground(dataAttribute) {
     const elements = document.querySelectorAll(`[${dataAttribute}]`);
 
     elements.forEach(async (element) => {
-        const svgUrl = getComputedStyle(element).getPropertyValue("--svg-url").trim().slice(4, -1);
+        const svgUrl = getComputedStyle(element).getPropertyValue("--svg-url").trim().replace(/^url\(['"]?|['"]?\)$/g, '');
         const fillColor = getComputedStyle(element).getPropertyValue("--svg-fill").trim();
+        const fillColorSecondary = getComputedStyle(element).getPropertyValue("--svg-fill-secondary").trim();
         const svgText = await loadSvg(svgUrl);
         const parser = new DOMParser();
         const svgDoc = parser.parseFromString(svgText, "image/svg+xml");
-        const paths = svgDoc.querySelectorAll("path");
+        const primaryElements = svgDoc.querySelectorAll("#primary");
+        const secondaryElements = svgDoc.querySelectorAll("#secondary");
 
-        paths.forEach(path => {
-            path.setAttribute("fill", fillColor);
+        primaryElements.forEach((elem) => {
+            if (fillColor) {
+                elem.setAttribute("fill", fillColor);
+            }
+        });
+
+        secondaryElements.forEach((elem) => {
+            if (fillColorSecondary) {
+                elem.setAttribute("fill", fillColorSecondary);
+            }
         });
 
         const serializer = new XMLSerializer();
