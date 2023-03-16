@@ -1,20 +1,15 @@
 :root {
     font-family: 'Noto Sans', sans-serif;
-    --sidebar-width: 15%;
-}
+    --sidebar-width: 10%;
 
-html {
-    overflow-x: hidden;
-    max-width: 100%;
+    --primary-color: rgb(89, 40, 91);
+    --secondary-color: rgb(78, 21, 107);
+    --tertiary-color: rgb(56, 1, 93);
 }
-
 
 body {
-    width: 100vw;
-    height: 100vh;
-
     margin: 0px;
-    background-color: mediumpurple;
+    background-color: rgb(24, 0, 51);
     color: white;
 }
 
@@ -27,30 +22,32 @@ h2 {
     text-align: center;
 }
 
-.sidebar {
+#sidebar {
     position: fixed;
     top: 0;
     left: 0;
     width: var(--sidebar-width);
     height: 100%;
-    background-color: #7e2e7b;
     overflow-y: auto;
 
     display: flex;
     flex-direction: column;
 
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-size: contain;
+    background-repeat: repeat;
+    
+    --svg-url: url('../images/shapes/sidebar.svg');
+    --svg-fill: var(--tertiary-color) ;
 }
 
-.main {
+#main {
     margin-left: var(--sidebar-width);
 }
 
-.project-tile-grid {
+#project-tile-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 15% 5%;
+    gap: 15% 3%;
 
     margin: 5% 4% 0% 4%;
     
@@ -66,54 +63,97 @@ h2 {
     display: flex;
     flex-direction: row;
     transition: transform 0.3s ease-in-out;
+
+    position: relative;
 }
 
 .project-tile.hover-effect {
-    transform: scale(1.1);
+    transform: scale(1.3);
+    z-index: 10;
+}
+
+.project-tile.hover-effect .project-tile-date {
+    transform: scale(2);
 }
 
 .project-tile h3 {
-    border-bottom: 0.25vh solid white;
+    border-bottom: 0.25vh solid var(--tertiary-color);
     margin: 5% 0% 0% 0%;
     padding: 0% 0% 5% 0%;
     font-size: 1.25vw;
     text-align: center;
-}
-
-.project-tile p {
-    text-align: center;
-    font-size: 0.85vw;
+    font-weight: normal;
 
 }
 
 .project-tile-showcase {
-    width: 70%;
-    background-color: rgb(32, 32, 32);
+    width: 60%;
+    background-color: var(--secondary-color);
     border-radius: 5%;
 
     display: flex;
     flex-direction: column;
     cursor: pointer;
 
+    z-index: 1;
+
+}
+
+.project-tile-showcase img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    
+    border-bottom-left-radius: 5%;
+    border-bottom-right-radius: 5%;
+
+    transition: transform 0.0s ease-in-out;
+
 }
 
 .project-tile-details {
     align-self: center;
-    height: 90%;
+    height: 95%;
+    width: 40%;
 
-    border-top-right-radius: 5%;
-    border-bottom-right-radius: 5%;
-
-    background-repeat: repeat;
-    background-size: contain;
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 
     --svg-url: url('../images/shapes/contributionsBox.svg');
-    --svg-fill: rgb(79, 37, 62);
-    --svg-fill-secondary: rgb(181, 110, 152);
+    --svg-fill:  var(--primary-color);
+    --svg-fill-secondary: var(--tertiary-color);
 }
 
 
 .project-tile-details h3 {
-    font-size: 1vw;
-    border-bottom: 0.25vh dotted white;
+    font-size: 0.9vw;
+    border-bottom: 0.25vh dotted var(--tertiary-color);
+
+    padding-top: 17.5%;
+}
+
+.project-tile-details div {
+    font-size: 0.7vw;
+    text-align: left;
+    text-indent: -12%;
+    padding: 0% 4% 15% 15%;
+}
+
+.project-tile-details p::first-line {
+    text-indent: 0%;
+}
+
+.project-tile-date {
+    bottom: 100%;
+    width: 100%;
+    height: 100%; 
+    background-color: rgba(34, 9, 49, 0.8); 
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: bottom 0.3s ease-in-out;
+    z-index: 10; 
 }
