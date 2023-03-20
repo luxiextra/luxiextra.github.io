@@ -2,59 +2,77 @@
 <html lang="en">
 
 <head>
-  
-    <title>Lucia Hughes' Portfolio</title>
-    <meta name="author" content="Lucia Hughes">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="favicon.png" type="image/x-icon">
+	<title>Lucia Hughes' Portfolio</title>
+	<meta name="author" content="Lucia Hughes">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="favicon.png" type="image/x-icon">
 
-    <link rel="stylesheet" href="styles/styles.css">
+	<link rel="stylesheet" href="styles/styles.css">
+	<link rel="stylesheet" href="styles/sidebar.css">
+	<link rel="stylesheet" href="styles/projectTiles.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+	
+	<script defer src="js/sidebar.js"></script>
+	<script defer src="js/projectTiles.js"></script>
+	<script defer src="js/svgBkg.js"></script>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <div id="sidebar" data-svg-bkg>
-        <h1>Lucia Hughes</h1>
-    </div>
+	<div id="sidebar" data-svg-bkg></div>
 
-    <div id="main">
+	<main>
+		<div class="infobox">
+			
+			<h1>Lucia Hughes</h1>
+			<h2>3rd Year Game Programmer @ Champlain College</h2>
 
-        <h1>Lucia Hughes</h1>
-        <h2>Game Programmer</h2>
-
-        <p>WIP</p>
-        <p>Lorem ipsum</p>
-        <p>Lorem ipsum</p>
-
+			<p>Hi, I'm Lucia. I am a game programmer who is a generalist in the sense that I can't pick a favorite, because I love pretty much every area of programming.
+				Taking on new challenges is always a personal goal for me on every project that I am a part of. I am very passionate about learning and trying new techniques.</p>
+			<p>I have experience working on both solo and collaborative projects. I am a strong team player, and I have received lots of positive feedback, both for my contributions and my critique.</p>
+			<p>I have the most experience in Unity / C#, but I am also well acquainted with Unreal and C++.</p>
+			<p>I am very passionate about making games, especially ones with creative gameplay design and ones that intend to have an emotional impact on its players. 
+				Even though programming is my focus, I greatly enjoy contributing to design conversations as well.</p>
+			<p>&nbsp;</p>
+		</div>
         
-        <template id="project-tile-template">
+		<template id="project-tile-template">
 
-          <div class="project-tile">
-            <div class="project-tile-showcase hoverable-child">
-              <h3>{{title}}</h3>
-              <img src="images/tiles/{{imageURL}}"\>
-            </div>
+			<a href="projects/{{pageURL}}">
+				<div class="project-tile">
 
-            <div class="project-tile-details hoverable-child" data-svg-bkg>
-              <h3>My Contributions</h3>
-              <div>{{contributions}}</div>
-            </div>
-          </div>
-            
-        </template>
-  
-          <div id="project-tile-grid">
-            <!-- The project tiles will be generated here -->
-          </div>
-    </div>  
+					<div class="project-tile-showcase hoverable-child">
+						<h3>{{title}}</h3>
+						<img src="images/tiles/{{imageURL}}" draggable="false">
+					</div>
 
-    <script src="js/script.js"></script>
-    <script src="js/svgBkg.js"></script>
+					<div class="project-tile-details hoverable-child" data-svg-bkg>
+						<h3>My Contributions</h3>
+						<div>{{contributions}}</div>
+					</div>
+
+					<div class="project-tile-date">
+						<h4>{{dates}}</h4>
+					</div>
+				
+				</div>
+			</a>
+		</template>
+		
+		<h1>Projects</h1>
+
+		<div id="project-tile-grid">
+			<!-- The project tiles will be generated here -->
+		</div>
+
+		<div class="bar"></div>
+	</main>
+
 
 </body>
 </html>

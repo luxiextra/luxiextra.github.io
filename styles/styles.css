@@ -1,159 +1,96 @@
 :root {
     font-family: 'Noto Sans', sans-serif;
-    --sidebar-width: 10%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
 
-    --primary-color: rgb(89, 40, 91);
-    --secondary-color: rgb(78, 21, 107);
-    --tertiary-color: rgb(56, 1, 93);
+    --background-color: rgb(39, 24, 56);
+    
+    --primary-color: rgb(63, 42, 87);
+    --secondary-color: rgb(0, 0, 0);
+    --tertiary-color: rgb(31, 15, 53);
+
+    scrollbar-color: var(--primary-color) var(--secondary-color);
+}
+
+::-webkit-scrollbar {
+    width: 1.25vw;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(47, 34, 65); 
+    border: 0.3vw solid var(--background-color);
+    border-radius: 1.5vw;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--primary-color);
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
 }
 
 body {
     margin: 0px;
-    background-color: rgb(24, 0, 51);
+    background-color: var(--background-color);
     color: white;
-}
-
-h1 {
-    text-align: left;
-    padding-left: 10%;
+    display: flex;
 }
 
 h2 {
-    text-align: center;
-}
-
-#sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: var(--sidebar-width);
-    height: 100%;
-    overflow-y: auto;
-
-    display: flex;
-    flex-direction: column;
-
-    background-size: contain;
-    background-repeat: repeat;
-    
-    --svg-url: url('../images/shapes/sidebar.svg');
-    --svg-fill: var(--tertiary-color) ;
-}
-
-#main {
-    margin-left: var(--sidebar-width);
-}
-
-#project-tile-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 15% 3%;
-
-    margin: 5% 4% 0% 4%;
-    
-    align-items: center;
-    justify-content: center;
-}
-
-.project-tile {
-    aspect-ratio: 4 / 3;
-    width: 100%;
-    margin: auto;
-
-    display: flex;
-    flex-direction: row;
-    transition: transform 0.3s ease-in-out;
-
-    position: relative;
-}
-
-.project-tile.hover-effect {
-    transform: scale(1.3);
-    z-index: 10;
-}
-
-.project-tile.hover-effect .project-tile-date {
-    transform: scale(2);
-}
-
-.project-tile h3 {
-    border-bottom: 0.25vh solid var(--tertiary-color);
-    margin: 5% 0% 0% 0%;
-    padding: 0% 0% 5% 0%;
-    font-size: 1.25vw;
+    margin-top: 0px;
     text-align: center;
     font-weight: normal;
-
 }
 
-.project-tile-showcase {
-    width: 60%;
-    background-color: var(--secondary-color);
-    border-radius: 5%;
+h4 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+main {
+    margin-left: var(--sidebar-width);
+    width: 100%;
+    padding: 2% 5% 0% 5%;
     display: flex;
+    flex-wrap:nowrap;
     flex-direction: column;
-    cursor: pointer;
-
-    z-index: 1;
-
+    align-items: left;
 }
 
-.project-tile-showcase img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+main h1 {
+    text-align: center;
+    font-size: 2.25vw;
+    margin-top: 2%;
     
-    border-bottom-left-radius: 5%;
-    border-bottom-right-radius: 5%;
-
-    transition: transform 0.0s ease-in-out;
-
+    padding-bottom: 1%;
+    border-bottom: 2px solid white; 
 }
 
-.project-tile-details {
-    align-self: center;
-    height: 95%;
-    width: 40%;
+.infobox {
 
-    background-position: center;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-
-    --svg-url: url('../images/shapes/contributionsBox.svg');
-    --svg-fill:  var(--primary-color);
-    --svg-fill-secondary: var(--tertiary-color);
+    background-color: var(--primary-color);
+    border-radius: 1rem;
+    padding: 0% 2%;
 }
 
-
-.project-tile-details h3 {
-    font-size: 0.9vw;
-    border-bottom: 0.25vh dotted var(--tertiary-color);
-
-    padding-top: 17.5%;
+.intro {
+    min-height: 28rem;
 }
 
-.project-tile-details div {
-    font-size: 0.7vw;
-    text-align: left;
-    text-indent: -12%;
-    padding: 0% 4% 15% 15%;
+main .infobox h1 {
+    border-bottom: none;
+    margin-bottom: 0px;
 }
 
-.project-tile-details p::first-line {
-    text-indent: 0%;
-}
+.bar {
+    background-color: var(--background-color);
+    padding: 2% 2% 2% 2%;
 
-.project-tile-date {
-    bottom: 100%;
-    width: 100%;
-    height: 100%; 
-    background-color: rgba(34, 9, 49, 0.8); 
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: bottom 0.3s ease-in-out;
-    z-index: 10; 
+    min-height: 10%;
 }

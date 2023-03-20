@@ -1,17 +1,26 @@
-<svg preserveAspectRatio="none" width="63" height="100" viewBox="0 0 63 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="63" height="100"/>
+<svg preserveAspectRatio="none" width="150" height="275" viewBox="0 0 150 275" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g id="Frame 1" clip-path="url(#clip0_0_1)">
-<path id="primary" d="M-1 4H57C59.7614 4 62 6.23858 62 9V91C62 93.7614 59.7614 96 57 96H-1V4Z"/>
+<rect id="primary" x="-2" y="6" width="146" height="263" />
 <g id="secondary">
-<path id="secondary_2" fill-rule="evenodd" clip-rule="evenodd" d="M29.5327 93C29.4407 93 29.3562 93.0505 29.3126 93.1314L25.1364 100.881C25.0467 101.048 25.1673 101.25 25.3565 101.25H36.6435C36.8327 101.25 36.9533 101.048 36.8636 100.881L32.6874 93.1314C32.6438 93.0505 32.5593 93 32.4673 93H29.5327Z"/>
-<path id="secondary_3" fill-rule="evenodd" clip-rule="evenodd" d="M29.056 7.25C28.9641 7.25 28.8795 7.19953 28.8359 7.11859L25.1986 0.368593C25.1089 0.202033 25.2295 0 25.4187 0H36.7057C36.8949 0 37.0155 0.202033 36.9257 0.368593L33.2884 7.11859C33.2448 7.19953 33.1603 7.25 33.0683 7.25H29.056Z"/>
-<path id="secondary_4" d="M30.9596 0.0110381C30.9861 0.00381218 31.0139 0.00381197 31.0404 0.0110379L46.3554 4.19942C46.5275 4.24649 46.4935 4.5 46.315 4.5H15.685C15.5065 4.5 15.4725 4.24649 15.6446 4.19942L30.9596 0.0110381Z"/>
-<path id="secondary_5" d="M30.9596 99.989C30.9861 99.9962 31.0139 99.9962 31.0404 99.989L46.3554 95.8006C46.5275 95.7535 46.4935 95.5 46.315 95.5H15.685C15.5065 95.5 15.4725 95.7535 15.6446 95.8006L30.9596 99.989Z"/>
+<path id="Vector 2" d="M122 6L140 2V6H122Z" stroke="black" stroke-width="0.2"/>
+<path id="Vector 3" d="M144 28L148 10H144V28Z" stroke="black" stroke-width="0.2"/>
+<path id="Vector 1" d="M149 8L142 1L130 6L144 20L149 8Z" stroke="black" stroke-width="0.2"/>
+<path id="Vector 6" d="M144 247L148 265H144V247Z" stroke="black" stroke-width="0.2"/>
+<path id="Vector 7" d="M122 269L140 273V269H122Z" stroke="black" stroke-width="0.2"/>
+<path id="Vector 8" d="M142 274L149 267L144 255L130 269L142 274Z" stroke="black" stroke-width="0.2"/>
+<path id="Vector 10" d="M32 5L0 0V9.33332V14L4.70588 14L7.52941 11.2L24.4706 11.2L32 5Z"  stroke="black" stroke-width="0.2"/>
+<path id="Vector 9" d="M32 269L0 274V264.667V260L4.70588 260L7.52941 262.8L24.4706 262.8L32 269Z"  stroke="black" stroke-width="0.2"/>
+</g>
+<g id="primary">
+<path id="Vector 4" d="M139 5L141 4L146 9L145 11L139 5Z"  stroke="black" stroke-width="0.2"/>
+<path id="Vector 5" d="M135 7L137 6L144 13L143 15L135 7Z"  stroke="black" stroke-width="0.2"/>
+<path id="primary_3" d="M145 264L146 266L141 271L139 270L145 264Z"  stroke="black" stroke-width="0.2"/>
+<path id="primary_4" d="M143 260L144 262L137 269L135 268L143 260Z"  stroke="black" stroke-width="0.2"/>
 </g>
 </g>
 <defs>
 <clipPath id="clip0_0_1">
-<rect width="63" height="100" fill="white"/>
+<rect width="150" height="275" fill="white"/>
 </clipPath>
 </defs>
 </svg>

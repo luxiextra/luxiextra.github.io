@@ -1,0 +1,65 @@
+:root {
+    --sidebar-width: 14%;
+    --sidebar-color: rgb(30, 19, 43);
+}
+
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--sidebar-width);
+    height: 100%;
+    overflow-y: auto;
+
+    display: flex;
+    flex-direction: column;
+
+    background-size: contain;
+    background-repeat: repeat;
+    
+    --svg-url: url('../images/shapes/sidebar.svg');
+    --svg-fill: var(--sidebar-color);
+}
+
+#sidebar nav {
+    padding: 10% 10% 10% 10%;
+}
+
+#sidebar h1 {
+    text-align: left;
+    font-size: 2vw;
+    cursor: pointer;
+    margin-top: 5%;
+}
+
+#sidebar img {
+    width: 20%;
+    vertical-align: middle;
+}
+
+#sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#sidebar ul ul {
+    padding-left: 10%;
+}
+
+#sidebar li a {
+    display: block;
+    padding: 2% 12% 2% 5%;
+    margin-left: -5%;
+    margin-bottom: 3%;
+
+    transition: background-color 0.5s ease-in-out;
+    font-size: 120%;
+}
+
+#sidebar li a:hover {
+    background-color: var(--secondary-color);
+}
+
+#sidebar li ul a {
+    font-size: 100%;
+}
