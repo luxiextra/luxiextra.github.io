@@ -3,6 +3,7 @@
     grid-template-columns: 1fr 1fr 1fr;
     gap: 12% 2%;
 
+    margin-bottom: 10%;
 
     align-items: center;
     justify-content: center;
@@ -94,11 +95,10 @@
 }
 
 .project-tile-date {
-    background-color: var(--primary-color);
+    background-color: var(--tertiary-color);
     padding: 2% 2% 2% 2%;
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
-
 
     z-index: -1;
 

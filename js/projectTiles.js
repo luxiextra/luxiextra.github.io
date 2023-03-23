@@ -18,7 +18,8 @@ const projects = [
       "Multiplayer lobby hosting/joining from Windows & Android",
       "R&D with GoogleARCore, SteamVR, and Oculus"
     ],
-    dates: "June 2022 - Dec 2022"
+    dates: "June 2022 - Dec 2022",
+    pageURL:"vizboxr.html"
   },
   {
     title: "Space Junk Janitor Simulator 2222",
@@ -28,7 +29,8 @@ const projects = [
       "Spline-based \"gravity-path\" level gimmick", 
       "Dynamic mini-map that is auto-generated for each level"
     ],
-    dates: "April 2022 - May 2022"
+    dates: "April 2022 - May 2022",
+    pageURL:"sjjs.html"
   },
   {
     title: "Fashion For All",
@@ -38,7 +40,9 @@ const projects = [
       "System that creates images using different combinations of colors, patterns, and styles", 
       "Dynamically generated UI"
     ],
-    dates: "Feb 2022 - March 2022"
+    dates: "Feb 2022 - March 2022",
+    pageURL:"ffa.html"
+
   },
   {
     title: "Fr0G-0",
@@ -49,7 +53,8 @@ const projects = [
       "Level building tools",
       "Little frogs that follow the player :)"
     ],
-    dates: "Jan 2022 - Feb 2022"
+    dates: "Jan 2022 - Feb 2022",
+    pageURL:"froggo.html"
   },
 ];
 
