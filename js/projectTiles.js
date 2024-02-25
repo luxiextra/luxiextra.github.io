@@ -1,11 +1,11 @@
 const projects = [
   {
     title: "Molementum",
-    imageURL: "agripocalypse.gif",
+    imageURL: "molementum.gif",
     contributions: [
-      "All networking systems including gameplay synchronization, lobby creation, and Steam integration.",
-      "Dynamic objectives system, and general game architecture",
-      "Acting as Programming Lead on a team of 18 developers"
+      "Networking systems including gameplay synchronization, lobby creation, and Steam integration",
+      "Systems for player movement and abilities including a finite state machine",
+      "Dynamic objectives system, and general game architecture"
     ],
     dates: "Sept 2023 - Present",
     pageURL:"molementum.html"
