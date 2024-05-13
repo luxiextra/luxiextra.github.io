@@ -1,3 +1,5 @@
+import { initializeDynamicAttribute } from './dynamicAttributeInitializer.js';
+
 async function loadSvg(url) {
     const response = await fetch(url);
     if (!response.ok) {
@@ -37,28 +39,4 @@ async function applyBackgroundTo(element)
     element.style.backgroundImage = backgroundImage;
 }
 
-
-const observer = new MutationObserver(mutations => 
-{
-    mutations.forEach(mutation =>
-    {
-        mutation.addedNodes.forEach(node =>
-        {
-            if (node.nodeType == 1 && node.hasAttribute('data-svg-bkg'))
-                applyBackgroundTo(node);
-        });
-    });
-});
-
-observer.observe(document.body, {childList: true, subtree: true});  
-
-document.addEventListener("DOMContentLoaded", function () 
-{
-    const elements = document.querySelectorAll(`[data-svg-bkg]`);
-
-    elements.forEach(async (element) => 
-    {
-       applyBackgroundTo(element);
-    });
-
-});
+initializeDynamicAttribute('data-svg-bkg', applyBackgroundTo);

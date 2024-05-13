@@ -47,7 +47,7 @@
 }
 
 #sidebar li a {
-    display: block;
+    display: flex;
     padding: 2% 12% 2% 5%;
     margin-left: -5%;
     margin-bottom: 3%;
@@ -63,3 +63,14 @@
 #sidebar li ul a {
     font-size: 100%;
 }
+
+#sidebar li a div {
+    width: 15%;
+    vertical-align: middle;
+    padding-right: 5%;
+}
+
+#sidebar li a span {
+    vertical-align: top;
+}
+
