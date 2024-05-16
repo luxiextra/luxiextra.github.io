@@ -1,0 +1,51 @@
+
+pre {
+
+    font-size: var(--font-size-p);
+    font-family: 'Cascadia Mono';
+    font-weight: 375;
+
+    background-color: rgb(20, 20, 20);
+    border-radius: 0.5rem;
+    padding: 15px;
+}
+
+.CsharpNamespace {
+    color: rgb(116, 122, 208);
+}
+
+.CsharpReferenceType {
+    color: rgb(116, 122, 208);
+}
+
+.CsharpModifier {
+    color: rgb(116, 122, 208);
+}
+
+.CsharpValueType {
+    color: rgb(116, 122, 208);
+}
+
+.CsharpValueOperator {
+    color: whitesmoke;
+}
+
+.CsharpStatement {
+    color: rgb(206, 118, 228);
+}
+
+.Csharp String {
+    color: rgb(205, 137, 92);
+}
+
+.CsharpKeyword {
+    color: rgb(116, 122, 208);
+}
+
+.CsharpMethod {
+    color: rgb(240, 215, 141);
+}
+
+.CsharpClass {
+    color: rgb(42, 198, 159);
+}
