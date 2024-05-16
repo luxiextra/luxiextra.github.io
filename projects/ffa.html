@@ -11,8 +11,10 @@
 	<link rel="stylesheet" href="/styles/styles.css">
 	<link rel="stylesheet" href="/styles/sidebar.css">
 
-	<script defer src="/js/sidebar.js"></script>
-	<script defer src="/js/svgBkg.js"></script>
+	<script defer type="module" src="/js/svgBkg.js"></script>
+	<script defer type="module" src="/js/elementImporter.js"></script>
+
+
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,7 +23,7 @@
 
 <body>
 
-	<div id="sidebar" data-svg-bkg></div>
+	<div element-import filePath="/elements/sidebar.html"></div>
 
 	<main>
 		<div class="infobox intro">
