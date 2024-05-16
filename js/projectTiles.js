@@ -4,10 +4,11 @@ const projects = [
     imageURL: "molementum.gif",
     contributions: [
       "Networking systems including gameplay synchronization, lobby creation, and Steam integration",
-      "Systems for player movement and abilities including a finite state machine",
+      "Finite state machine for player movement, and a modular upgrades system",
       "Dynamic objectives system, and general game architecture"
     ],
-    dates: "Sept 2023 - Present",
+    dates: "Sept 2023 - May 2024",
+    teamSize: "18",
     pageURL:"molementum.html"
   },  
   {
