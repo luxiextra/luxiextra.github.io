@@ -181,6 +181,7 @@ main .infobox h1 {
 .infobox iframe {
     margin-top: 2%;
     flex: 2;
+    border-radius: 2rem;
 }
 
 .infobox img {
