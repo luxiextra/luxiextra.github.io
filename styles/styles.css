@@ -128,6 +128,7 @@ p a:hover {
     border-bottom: 1px white solid;
 }
 
+
 .intro {
     min-height: 28rem;
 }
@@ -179,7 +180,7 @@ main .infobox h1 {
 }
 
 iframe {
-    flex: 2.5;
+    flex: 2.25;
     border-radius: 2rem;
     margin: 0% 2%;
 }
@@ -237,4 +238,45 @@ iframe {
 
     margin: 1.5% 0%;
     
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    border: 1px solid var(--tertiary-color);
+    margin-top: 5%;
+}
+
+.info-grid h3 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+
+    border: 1px solid var(--tertiary-color);
+    text-align: center;
+    padding: 2%;
+    margin: 0%;
+}
+
+.info-grid p {
+    border: 1px solid var(--tertiary-color);
+    padding: 5px;
+    margin: 0%;
+    vertical-align: center;
+    
+}
+
+.info-grid > div {
+    border: 1px solid var(--tertiary-color);
+}
+
+.info-grid div p {
+    border: 0px;
+}
+
+.top-align {
+    vertical-align: top;
+}
+
+.no-top-margin {
+    margin-top: 0%;
 }

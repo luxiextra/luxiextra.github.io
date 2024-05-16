@@ -9,6 +9,11 @@ const projects = [
     ],
     dates: "Sept 2023 - May 2024",
     teamSize: "18",
+    roles: [ 
+      "Lead Programmer", 
+      "Networking Programmer", 
+      "Systems Programmer"
+    ],
     pageURL:"molementum.html"
   },  
   {
@@ -94,6 +99,28 @@ function generateProjectTiles(projects) {
   });
 }
 
+function isProjectPage() {
+  const path = window.location.pathname;
+  return path.startsWith("/projects/");
+}
+
+async function fillInfoGrid(projects) {
+  const url = window.location.pathname;
+  const projectPageName = url.substring(url.lastIndexOf('/') + 1);
+  const projectData = projects.find(project => project.pageURL === projectPageName);
+
+  const templateResponse = await fetch('/elements/projectInfoGridTemplate.html');
+  const templateText = await templateResponse.text();
+  const tempDiv = document.createElement('div');
+  tempDiv.innerHTML = templateText;
+  
+  const template = tempDiv.querySelector('#info-grid').content.cloneNode(true);
+  const templateString = template.querySelector('.info-grid').outerHTML;
+
+  const infoGrid = document.querySelector('#info-grid');
+  infoGrid.innerHTML = replacePlaceholders(templateString, projectData);
+}
+
 function initializeHoverEffects() {
   var hoverableChildren = document.querySelectorAll(".hoverable-child");
 
@@ -108,8 +135,10 @@ function initializeHoverEffects() {
   });
 }
 
-
-generateProjectTiles(projects);
+if (isProjectPage())
+  fillInfoGrid(projects);
+else
+  generateProjectTiles(projects);
 
 document.addEventListener("DOMContentLoaded", function () {
   
