@@ -8,7 +8,7 @@ const projects = [
       "Dynamic objectives system, and general game architecture"
     ],
     dates: "Sept 2023 - May 2024",
-    teamSize: "18",
+    teamSize: "19",
     roles: [ 
       "Lead Programmer", 
       "Networking Programmer", 
