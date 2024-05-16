@@ -186,6 +186,8 @@ main .infobox h1 {
 .infobox img {
     flex: 0.5f;
     align-self: center;
+
+    border-radius: 0.5rem;
 }
 
 .title-image {
@@ -201,9 +203,16 @@ main .infobox h1 {
 .flexrow {
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
 }
 
-.infobox .highlight {
+.flexcolumn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.highlight {
     background-color: var(--tertiary-color);
     border-radius: 1rem;
     padding: 1% 2% 1% 2%;
