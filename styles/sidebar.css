@@ -27,13 +27,13 @@
 
 #sidebar h1 {
     text-align: left;
-    font-size: 2vw;
+    font-size: var(--font-size-h1);
     cursor: pointer;
     margin-top: 5%;
 }
 
 #sidebar img {
-    width: 20%;
+    width: 30%;
     vertical-align: middle;
 }
 
@@ -48,12 +48,14 @@
 
 #sidebar li a {
     display: flex;
+    flex-direction: row;
+
     padding: 2% 12% 2% 5%;
     margin-left: -5%;
     margin-bottom: 3%;
 
     transition: background-color 0.5s ease-in-out;
-    font-size: 120%;
+    font-size: var(--font-size-h3);
 }
 
 #sidebar li a:hover {
@@ -61,7 +63,8 @@
 }
 
 #sidebar li ul a {
-    font-size: 100%;
+    font-size: var(--font-size-p);
+    text-align: middle;
 }
 
 #sidebar li a div {
@@ -69,8 +72,3 @@
     vertical-align: middle;
     padding-right: 5%;
 }
-
-#sidebar li a span {
-    vertical-align: top;
-}
-

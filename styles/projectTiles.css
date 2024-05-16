@@ -33,10 +33,18 @@
     border-bottom: 0.25vh solid var(--tertiary-color);
     margin: 5% 0% 0% 0%;
     padding: 0% 0% 5% 0%;
-    font-size: 1.25vw;
     text-align: center;
     font-weight: normal;
 
+}
+
+.project-tile-details h4 {
+    border-bottom: 0.25vh dotted var(--tertiary-color);
+    margin: 0% 4.5% 0% 2%;
+    padding: 11% 0% 5% 0%;
+
+    text-align: center;
+    font-weight: normal;
 }
 
 .project-tile-showcase {
@@ -76,18 +84,16 @@
 }
 
 
-.project-tile-details h3 {
-    font-size: 0.9vw;
-    border-bottom: 0.25vh dotted var(--tertiary-color);
-    margin: 0% 4.5% 0% 2%;
-    padding-top: 11%;
-}
+
 
 .project-tile-details div {
-    font-size: 0.7vw;
     text-align: left;
     text-indent: -12%;
     padding: 0% 4% 15% 15%;
+}
+
+.project-tile-details p {
+    font-size: var(--font-size-small);
 }
 
 .project-tile-details p::first-line {
