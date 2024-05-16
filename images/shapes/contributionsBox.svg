@@ -1,26 +1,82 @@
-<svg preserveAspectRatio="none" width="150" height="275" viewBox="0 0 150 275" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="Frame 1" clip-path="url(#clip0_0_1)">
-<rect id="primary" x="-2" y="6" width="146" height="263" />
-<g id="secondary">
-<path id="Vector 2" d="M122 6L140 2V6H122Z" stroke="black" stroke-width="0.2"/>
-<path id="Vector 3" d="M144 28L148 10H144V28Z" stroke="black" stroke-width="0.2"/>
-<path id="Vector 1" d="M149 8L142 1L130 6L144 20L149 8Z" stroke="black" stroke-width="0.2"/>
-<path id="Vector 6" d="M144 247L148 265H144V247Z" stroke="black" stroke-width="0.2"/>
-<path id="Vector 7" d="M122 269L140 273V269H122Z" stroke="black" stroke-width="0.2"/>
-<path id="Vector 8" d="M142 274L149 267L144 255L130 269L142 274Z" stroke="black" stroke-width="0.2"/>
-<path id="Vector 10" d="M32 5L0 0V9.33332V14L4.70588 14L7.52941 11.2L24.4706 11.2L32 5Z"  stroke="black" stroke-width="0.2"/>
-<path id="Vector 9" d="M32 269L0 274V264.667V260L4.70588 260L7.52941 262.8L24.4706 262.8L32 269Z"  stroke="black" stroke-width="0.2"/>
-</g>
-<g id="primary">
-<path id="Vector 4" d="M139 5L141 4L146 9L145 11L139 5Z"  stroke="black" stroke-width="0.2"/>
-<path id="Vector 5" d="M135 7L137 6L144 13L143 15L135 7Z"  stroke="black" stroke-width="0.2"/>
-<path id="primary_3" d="M145 264L146 266L141 271L139 270L145 264Z"  stroke="black" stroke-width="0.2"/>
-<path id="primary_4" d="M143 260L144 262L137 269L135 268L143 260Z"  stroke="black" stroke-width="0.2"/>
-</g>
-</g>
-<defs>
-<clipPath id="clip0_0_1">
-<rect width="150" height="275" fill="white"/>
-</clipPath>
-</defs>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   preserveAspectRatio="none"
+   width="150"
+   height="275"
+   viewBox="0 0 150 275"
+   fill="none"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="contributionsBox.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="2.9890909"
+     inkscape:cx="101.87044"
+     inkscape:cy="204.40998"
+     inkscape:window-width="1920"
+     inkscape:window-height="1018"
+     inkscape:window-x="-6"
+     inkscape:window-y="-6"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <g
+     id="Frame 1"
+     clip-path="url(#clip0_0_1)">
+    <rect
+       id="primary"
+       x="-2"
+       y="6"
+       width="146"
+       height="263" />
+    <g
+       id="secondary">
+      <path
+         id="Vector 1"
+         d="M 145.45004,3.9900395 C 143.23959,3.8572786 128.22763,4.0892343 130,6 l 14.46,15.589112 c 0.93482,1.007815 6.32257,-17.5990725 0.99007,-17.5990725 z"
+         stroke="#000000"
+         stroke-width="0.2"
+         sodipodi:nodetypes="sssss" />
+      <path
+         id="Vector 10"
+         d="M 32,5 0,0 V 9.33332 14 H 4.70588 L 7.52941,11.2 H 24.4706 Z"
+         stroke="#000000"
+         stroke-width="0.2" />
+      <path
+         id="Vector 9"
+         d="M 32,269 0,274 V 264.667 260 h 4.70588 l 2.82353,2.8 H 24.4706 Z"
+         stroke="#000000"
+         stroke-width="0.2" />
+      <path
+         id="path1"
+         d="m 144.48002,272.36322 c -2.21045,0.13276 -17.22241,-0.0992 -15.45004,-2.00996 l 14.46,-15.58911 c 0.93482,-1.00781 6.32257,17.59907 0.99007,17.59907 z"
+         stroke="#000000"
+         stroke-width="0.2"
+         sodipodi:nodetypes="sssss" />
+    </g>
+    <g
+       id="g1" />
+  </g>
+  <defs
+     id="defs1">
+    <clipPath
+       id="clip0_0_1">
+      <rect
+         width="150"
+         height="275"
+         fill="white"
+         id="rect1" />
+    </clipPath>
+  </defs>
 </svg>
