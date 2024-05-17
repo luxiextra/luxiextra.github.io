@@ -1,0 +1,32 @@
+<pre><span class="Csharp"><span class="CsharpModifier">public</span> <span class="CsharpModifier">abstract</span> <span class="CsharpReferenceType">class</span> <span class="CsharpClass">LobbyManager</span> : <span class="CsharpClass">NetworkBehaviour</span>
+{
+    <span class="CsharpComment">// == Public Events ==</span>
+    <span class="CsharpModifier">public</span> <span class="CsharpClass">UnityEvent</span>&lt;<span class="CsharpClass">NetworkUser</span>&gt; OnPlayerJoined { get; <span class="CsharpModifier">private</span> set; } <span class="CsharpOperator">=</span> <span class="CsharpKeyword">new</span>();
+    <span class="CsharpComment">// ... etc... </span>
+	
+    <span class="CsharpComment">// == Public Properties ==</span>
+    <span class="CsharpModifier">public</span> <span class="CsharpModifier">virtual</span> <span class="CsharpValueType">bool</span> IsInLobby { get; <span class="CsharpModifier">protected</span> set; }
+    <span class="CsharpComment">// ... etc ... </span>
+		
+    <span class="CsharpComment">// == Methods ===</span>
+    <span class="CsharpModifier">public async</span> <span class="CsharpClass">Task</span>&lt;<span class="CsharpValueType">bool</span>&gt; <span class="CsharpMethod">TryJoinWithCode</span>(<span class="CsharpReferenceType">string</span> joinCode)
+    {
+        <span class="CsharpComment">// Escape clauses</span>
+        <span class="CsharpStatement">if</span> (!CanJoinGame) <span class="CsharpStatement">return</span> <span class="CsharpKeyword">false</span>; 
+        <span class="CsharpStatement">if</span> (<span class="CsharpReferenceType">string</span>.<span class="CsharpMethod">IsNullOrEmpty</span>(joinCode)) <span class="CsharpStatement">return</span> <span class="CsharpKeyword">false</span>;
+	
+        <span class="CsharpValueType">bool</span> wasJoinSuccessful <span class="CsharpOperator">=</span> <span class="CsharpKeyword">await</span> <span class="CsharpMethod">JoinWithCode</span>(joinCode);
+        <span class="CsharpStatement">if</span> (!wasJoinSuccessful) <span class="CsharpStatement">return</span> <span class="CsharpKeyword">false</span>; 
+
+        <span class="CsharpComment">// React to current lobby status</span>
+        <span class="CsharpMethod">ProcessCurrentPlayers</span>();
+        <span class="CsharpKeyword">await</span> <span class="CsharpMethod">SetupLobbyEventsAsync</span>();
+        <span class="CsharpMethod">CheckLobbyDataStatus</span>();
+
+        <span class="CsharpStatement">return</span> <span class="CsharpKeyword">true</span>;
+    }
+	
+    <span class="CsharpComment">// Abstract Methods</span>
+    <span class="CsharpModifier">protected</span> <span class="CsharpModifier">abstract</span> <span class="CsharpValueType">void</span> <span class="CsharpMethod">ProcessCurrentPlayers</span>();
+    <span class="CsharpModifier">protected</span> <span class="CsharpModifier">abstract</span> <span class="CsharpClass">Task</span> <span class="CsharpMethod">SetupLobbyEventsAsync</span>();
+}</span></pre>

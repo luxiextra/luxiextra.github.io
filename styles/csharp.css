@@ -1,7 +1,7 @@
 
 pre {
 
-    font-size: var(--font-size-p);
+    font-size: var(--font-size-small);
     font-family: 'Cascadia Mono';
     font-weight: 375;
 
@@ -48,4 +48,8 @@ pre {
 
 .CsharpClass {
     color: rgb(42, 198, 159);
+}
+
+.CsharpComment {
+    color: rgb(2, 125, 2);
 }

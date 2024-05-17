@@ -28,26 +28,67 @@
 	<main>
 
 		<img src="/images/projects/molementum/logo.png" alt="Molementum" draggable="false" class="float-title">
-		
+
 		<div class="flexrow">
+
+			<div class="flexcolumn" style="flex:2;">
+				<iframe height="400vh" src="https://www.youtube.com/embed/AisxeZa15RQ?si=-A_JDascbIYUrjLU"
+				title="Molementum Trailer" frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+				referrerpolicy="strict-origin-when-cross-origin" 
+				style="flex: auto;" allowfullscreen></iframe>
+				
+				<p class="text-column" style="flex:auto">
+					Molementum is a 3D party action game where you assume the role of a mole criminal to rob mines of their precious gems. Grab up to 3 friends and scramble your way through mines while engaging in various acts of competitive mischief as you try to become the most notorious mole criminal.
+				</p>
+			</div>
 			
-			<iframe height="515vh" src="https://www.youtube.com/embed/AisxeZa15RQ?si=-A_JDascbIYUrjLU" title="Molementum Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 			<div class="infobox no-top-margin">
 				<div id="info-grid"></div>
-				<iframe src="https://store.steampowered.com/widget/2841830/" frameborder="0" style="border-radius: 0; min-height: 190px;"></iframe>
+				<iframe src="https://store.steampowered.com/widget/2841830/" frameborder="0"
+					style="border-radius: 0; min-height: 190px;"></iframe>
 			</div>
 		</div>
-		
+
 		<h1>Networking</h1>
 
-		<p>I have been working with Unity Netcode for Game Objects since <a href="/projects/vizboxr.html">VizBoXR</a> in 2022, and the updates to the framework since then have coincided very well with my speed of learning the best approaches to take.</p>
+		<div class="flexrow">
 
+			<div style="margin-right: 4rem; width: 50%">
+				<p>Molementum is an fast-paced online multiplayer game. Players use Lobby Codes to join each other's
+					games. Players have the ability to customize their names and appearance. As it is a non-competitive
+					party game, we opted for a host-client structure. </p>
+				<p>I have been working with Unity Netcode for Game Objects since <a href="/projects/vizboxr.html">VizBoXR</a> in 2022, and the updates to the framework since then
+					have coincided well with my speed of learning the best approaches to take.</p>
+			</div>
+			<div style="width:50%">
+				<h4>Packages and Frameworks Used</h4>
+				<div class="highlight">
+
+					<ul>
+						<li>Unity Netcode for Game Objects</li>
+						<li>Facepunch.Steamworks (.NET wrapper for Steamworks API)</li>
+						<li>Unity Services
+							<ul>
+								<li>Lobby</li>
+								<li>Relay</li>
+								<li>Authentication</li>
+							</ul>
+						</li>
+						<li>ParrelSync (for developers)</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		</div>
 		<div class="infobox">
 			<h1>Lobby Management</h1>
 
 			<p>
-				Molementum has a private lobby-code lobby system based on the Unity Lobbies service framework.
-
+				Molementum has a private lobby-code lobby system utilizing the Unity Lobby and Relay services. This
+				system is completely decoupled from the rest of the game, meaning it could be used easily in other
+				multiplayer games in the future.
 			</p>
 
 			<h2>Supporting Multiple Backends</h2>
@@ -55,23 +96,55 @@
 			<div class="flexrow">
 				<div class="flexcolumn">
 					<p>
-						By utilizing polymorphism, I was able to easily simultaneously develop backend Lobby systems that utilized both the Unity Lobbies service and the Steamworks framwork. We chose to take advantage of both frameworks, so that we could allow Steam users to invite their friends easily, but also release a playable build on Itch.io which lacks Play with Friends features.  
+						By utilizing polymorphism, I was able to quickly develop separate backend Lobby systems that
+						utilized Unity Services and the Steamworks framework. We chose to take advantage of both, so
+						that we could allow Steam users to invite their friends easily, but also release a playable
+						build on Itch.io.
 					</p>
 
 					<p>
-						In the future, I would consider using Dependency Injection to allow for Steam users to switch backends if they would like to play with itchio users.
-						Another possibility would be to use the Unity Lobby services 
+						In the future, I would consider using Dependency Injection to allow for Steam users to switch
+						backends if they would like to play with itchio users.
+						We also considered a setup that allowed for a lobby with both advantages, but lacked development
+						time to explore that.
 					</p>
 				</div>
-					<img class="diagram" draggable=false src="/images/projects/molementum/lobbyManager.png">
+				<img class="diagram" draggable=false src="/images/projects/molementum/lobbyManager.png">
 			</div>
+
+			<div class="flexrow">
+				<div element-import filePath="/elements/molementum/lobbyManagerCodeBlock.html"></div>
+
+				<div class="text-column">
+					<p>
+						This code snippet should give you an idea of the basic structure of the abstract class.
+					</p>
+					<p>
+						These events are mostly useful for UI updates, as well as notifying game systems if a player left early.
+					</p>
+					<p>
+						Public virtual properties with protected set components offer greater flexibility for derived classes. They can be overriden like a getter method, or be set directly inside of other methods.
+					</p>
+					<br>
+					<p>
+						The LobbyManager class contains a number of methods that act like this: A public method that handles validation and then calls abstract methods.
+					</p>
+					<br>
+					<p>
+						This snippet also demonstrates use of asynchronous methods and .NET Tasks. 
+					</p>
+				</div>
+
+			</div>
+
 
 		</div>
 
+		<h1>Modular Systems</h1>
+		TODO
 
 		<h1>Game Architecture</h1>
-
-		<h1>Modular Systems</h1>
+		TODO
 
 
 		<div id="credits" class="infobox">
@@ -110,11 +183,14 @@
 					<p><a href="https://www.linkedin.com/in/charley-petty/">Charley Petty</a></p>
 				</div>
 			</div>
-			<p>If you are looking for any other roles, I would strongly encourage taking a look at my teammates' portfolios linked above. They are all extremely talented and great to work with. I could not have asked for a better team.</p>
+			<p>If you are looking for any other roles, I would strongly encourage taking a look at my teammates'
+				portfolios linked above. They are all extremely talented and great to work with. I could not have asked
+				for a better team.</p>
 
 		</div>
 	</main>
 
 
 </body>
+
 </html>
