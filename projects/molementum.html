@@ -16,7 +16,6 @@
 	<script defer type="module" src="/js/elementImporter.js"></script>
 	<script defer src="/js/projectTiles.js"></script>
 
-
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
@@ -32,12 +31,47 @@
 		
 		<div class="flexrow">
 			
-			<iframe height="488vh" src="https://www.youtube.com/embed/AisxeZa15RQ?si=-A_JDascbIYUrjLU" title="Molementum Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
+			<iframe height="515vh" src="https://www.youtube.com/embed/AisxeZa15RQ?si=-A_JDascbIYUrjLU" title="Molementum Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 			<div class="infobox no-top-margin">
 				<div id="info-grid"></div>
+				<iframe src="https://store.steampowered.com/widget/2841830/" frameborder="0" style="border-radius: 0; min-height: 190px;"></iframe>
 			</div>
 		</div>
+		
+		<h1>Networking</h1>
+
+		<p>I have been working with Unity Netcode for Game Objects since <a href="/projects/vizboxr.html">VizBoXR</a> in 2022, and the updates to the framework since then have coincided very well with my speed of learning the best approaches to take.</p>
+
+		<div class="infobox">
+			<h1>Lobby Management</h1>
+
+			<p>
+				Molementum has a private lobby-code lobby system based on the Unity Lobbies service framework.
+
+			</p>
+
+			<h2>Supporting Multiple Backends</h2>
+
+			<div class="flexrow">
+				<div class="flexcolumn">
+					<p>
+						By utilizing polymorphism, I was able to easily simultaneously develop backend Lobby systems that utilized both the Unity Lobbies service and the Steamworks framwork. We chose to take advantage of both frameworks, so that we could allow Steam users to invite their friends easily, but also release a playable build on Itch.io which lacks Play with Friends features.  
+					</p>
+
+					<p>
+						In the future, I would consider using Dependency Injection to allow for Steam users to switch backends if they would like to play with itchio users.
+						Another possibility would be to use the Unity Lobby services 
+					</p>
+				</div>
+					<img class="diagram" draggable=false src="/images/projects/molementum/lobbyManager.png">
+			</div>
+
+		</div>
+
+
+		<h1>Game Architecture</h1>
+
+		<h1>Modular Systems</h1>
 
 
 		<div id="credits" class="infobox">
