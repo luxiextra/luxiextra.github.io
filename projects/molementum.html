@@ -245,10 +245,39 @@
 		
 		<div class="infobox">
 			<h1>Player Systems</h1>
+			
+			<p>Molementum's player requires a large amount of systems that are somewhat intertwined. Upon deciding on final design for the gameplay loop, I created and implemented a new structure for the Player scripts, which would allow for decoupling of the various Player systems.</p>
+			
+			<h2>Manager and Access Point</h2>
+			<div class="flexrow">
+				<div class="flexcolumn">	
+				<p>The Player script serves as an access point for all Player subsystems. It also manages the subsystems, dictating update execution order, and enabling/disabling certain systems depending on the game state.</p>
+				<p>Having a central access point like this helps to enable a events-focused approach. For example, the PlayerAudio script listens to several events in other player systems to know when to play sound effects and voice lines. This approach also helped debugging since we could easily track the order that player systems operated in.</p>
+				<p>Networking was separated into its own script by splitting its behavior into two types: local and non-local. On the local player's player object, the PlayerNetworker listens to events and transmits necessary info across the network regularly. For all other player objects, the PlayerNetworker outputs events, which other scripts listen for. With some exceptions, the PlayerNetworker is treated similarly to the InputManager in these circumstances.</p>
+			
+			</div>
+			<img class="diagram" draggable=false style="padding-top: 10px;" src="/images/projects/molementum/player.png">
+			</div>
 		</div>
+		
+		
 		<div class="infobox">
 			<h1>Game Management</h1>
+			
+			<p>
+				The GameManager takes a similar approach to the Player script with a manager class. The GameManager is the only Singleton class in Molementum, and thus acts as an access point for the many events and objects.
+				The subsystems of the GameManager have almost no reliance on other GameManager subsystems. The main exception is the Scorekeeper, which acts as an event listener.
+			</p>
+
+			<p>LobbyManager, InputManager, PlayerSettingsManager, and RoundManager are all subsystems, which could be wholly removed from this game and put into others. The RoundManager manages game phase changes. Some game phases involve a scene change and others do not.</p>
+			
+			<p>
+				The ActionPhaseManager and DecisionPhaseManager are the most complex systems as they dictate the core flow of the game. They each have their own subsystems, which could be explored in more detail.
+			</p>
+
+			<img class="diagram" draggable=false style="padding-top: 10px;" src="/images/projects/molementum/gameManager.png">
 		</div>
+			
 
 
 		<div id="credits" class="infobox">
