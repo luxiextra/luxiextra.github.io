@@ -11,6 +11,7 @@
 
     scrollbar-color: var(--primary-color) var(--secondary-color);
 
+    --font-size-xl: 3rem;
     --font-size-h1: 2rem;
     --font-size-h2: 1.5rem;
     --font-size-h3: 1.2rem;
@@ -22,6 +23,7 @@
 @media (min-width: 80em)
 {
     :root {
+        --font-size-xl: 4rem;
         --font-size-h1: 2.75rem;
         --font-size-h2: 1.75rem;
         --font-size-h3: 1.5rem;
@@ -97,14 +99,12 @@ main {
 
 main h1 {
     text-align: center;
-    font-size: var(--font-size-h1);
+    font-size: var(--font-size-xl);
     margin-top: 2%;
     
     padding-bottom: 1%;
     border-bottom: 2px solid white; 
 }
-
-
 
 .infobox {
 
@@ -138,6 +138,7 @@ p a:hover {
 main .infobox h1 {
     border-bottom: none;
     margin-bottom: 0px;
+    font-size: var(--font-size-h1);
 }
 
 .bar {
@@ -178,7 +179,7 @@ main .infobox h1 {
 .image-row a {
     align-items: center;
     display: flex;
-    margin: 0 5%;
+    margin: 0% 5%;
 }
 
 iframe {
@@ -225,6 +226,7 @@ iframe {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    align-items: center;
 }
 
 .flexcolumn {
@@ -320,4 +322,16 @@ iframe {
 
 .text-column {
     margin-left: 1rem;
+}
+
+.button {
+    background-color: var(--secondary-color);
+    border-radius: 2rem;
+
+    margin: 0.5rem;
+    padding: 1rem;
+}
+
+.button:hover {
+    background-color: var(--primary-color);
 }

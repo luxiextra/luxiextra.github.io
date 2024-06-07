@@ -1,0 +1,23 @@
+<pre><span class="Csharp"><span class="CsharpNamespace">namespace</span> PlayerSystems.Upgrades
+    {
+        <span class="CsharpModifier">public</span> <span class="CsharpReferenceType">class</span> DemoUpgrade : Upgrade, IActive, IPassive
+        {
+        <span class="CsharpComment">// If unsure about the purpose of any interface methods, hover over its name to read summary.</span>
+        
+        <span class="CsharpComment">// [Header(&quot;DemoUpgrade Settings&quot;)] // Uncomment this if you add any SerializeFields</span>
+    
+            
+        <span class="CsharpComment">//==IActive Interface Methods==//</span>
+        <span class="CsharpModifier">public</span> <span class="CsharpValueType">void</span> SetupNonInputActivationEvent() { }<span class="CsharpComment">//has default implementation (this line can be removed if desired)</span>
+        <span class="CsharpModifier">public</span> <span class="CsharpValueType">void</span> CleanupNonInputActivationEvent() { }<span class="CsharpComment">//has default implementation (this line can be removed if desired)</span>
+        <span class="CsharpModifier">public</span> <span class="CsharpValueType">void</span> UseActive() { }
+        <span class="CsharpModifier">public</span> <span class="CsharpValueType">void</span> HandleActiveInputEnded() { }
+        <span class="CsharpModifier">public</span> <span class="CsharpValueType">void</span> UpdateOnInputHeld(<span class="CsharpValueType">float</span> deltaTime) { }
+        <span class="CsharpModifier">public</span> <span class="CsharpValueType">void</span> FixedUpdateOnInputHeld() { }
+        <span class="CsharpModifier">public</span> <span class="CsharpValueType">bool</span> IsActiveUsable() { <span class="CsharpStatement">return</span> <span class="CsharpKeyword">true</span>; }<span class="CsharpComment">//has default implementation (this line can be removed if desired)</span>
+        <span class="CsharpComment">//==IPassive Interface Methods==//</span>
+        <span class="CsharpModifier">public</span> <span class="CsharpValueType">void</span> EnablePassive() { }
+        <span class="CsharpModifier">public</span> <span class="CsharpValueType">void</span> DisablePassive() { }
+        <span class="CsharpModifier">public</span> <span class="CsharpValueType">void</span> UpdatePassive(<span class="CsharpValueType">float</span> deltaTime) { }
+        }
+    }</span></pre>

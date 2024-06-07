@@ -1,0 +1,60 @@
+<pre><span class="Csharp"><span class="CsharpModifier">public</span> <span class="CsharpReferenceType">interface</span> IState
+{
+    <span class="CsharpComment">/// &lt;summary&gt;</span>
+    <span class="CsharpComment">/// Called at the start of the Action Phase. Use for specific initialization needs. Likely irrelevant to many states.</span>
+    <span class="CsharpComment">/// &lt;/summary&gt;</span>
+    <span class="CsharpModifier">public</span> <span class="CsharpValueType">void</span> SetupState() { }
+
+    <span class="CsharpComment">/// &lt;summary&gt;</span>
+    <span class="CsharpComment">/// Counterpart to SetupState. Called at the end of the ActionPhase. Likely unneeded for most states.</span>
+    <span class="CsharpComment">/// &lt;/summary&gt;</span>
+    <span class="CsharpModifier">public</span> <span class="CsharpValueType">void</span> CleanupState() { }
+
+
+    <span class="CsharpComment">/// &lt;summary&gt;</span>
+    <span class="CsharpComment">/// Called when this state is entered. This is a good place to add additives/multipliers to PlayerVariables.</span>
+    <span class="CsharpComment">/// &lt;/summary&gt;</span>
+    <span class="CsharpModifier">public</span> <span class="CsharpValueType">void</span> OnEnter();
+
+    <span class="CsharpComment">/// &lt;summary&gt;</span>
+    <span class="CsharpComment">/// Called when this state is exited. This is a good place to remove additives/multipliers from PlayerVariables.</span>
+    <span class="CsharpComment">/// &lt;/summary&gt;</span>
+    <span class="CsharpModifier">public</span> <span class="CsharpValueType">void</span> OnExit();
+
+    <span class="CsharpComment">/// &lt;summary&gt;</span>
+    <span class="CsharpComment">/// Called during every Update while this state is the active player state.</span>
+    <span class="CsharpComment">/// This is a good place to call _player.InteractionController.TryStun() or similar methods.</span>
+    <span class="CsharpComment">/// &lt;/summary&gt;</span>
+    <span class="CsharpModifier">public</span> <span class="CsharpValueType">void</span> StateUpdate(<span class="CsharpValueType">float</span> deltaTime);
+
+    <span class="CsharpComment">/// &lt;summary&gt;</span>
+    <span class="CsharpComment">/// Called during every FixedUpdate while this state is the active player state.</span>
+    <span class="CsharpComment">/// This is a good place to call _player.AddForce().</span>
+
+    <span class="CsharpComment">/// &lt;/summary&gt;</span>
+    <span class="CsharpModifier">public</span> <span class="CsharpValueType">void</span> StateFixedUpdate();
+
+
+    <span class="CsharpComment">/// &lt;summary&gt;</span>
+    <span class="CsharpComment">/// Called during FixedUpdate while this state is the active player state to check if the state should remain active.</span>
+    <span class="CsharpComment">/// This usually either returns true always, or is dependent on _player.IsGrounded</span>
+    <span class="CsharpComment">/// Don&#39;t worry about cooldowns or stamina: handled in Upgrade + PlayerStateMachine respectively.</span>
+    <span class="CsharpComment">/// &lt;/summary&gt;</span>
+    <span class="CsharpComment">/// &lt;returns&gt;True if current state is allowed. False otherwise.&lt;/returns&gt;</span>
+    <span class="CsharpModifier">public</span> <span class="CsharpValueType">bool</span> ShouldRemainCurrentState() { <span class="CsharpStatement">return</span> <span class="CsharpKeyword">true</span>; }
+
+    <span class="CsharpComment">/// &lt;summary&gt;</span>
+    <span class="CsharpComment">/// Checks if the state can be interrupted by the provided state.</span>
+    <span class="CsharpComment">/// Most states return true always, Stunned always returns false, and some have greater complexity.</span>
+    <span class="CsharpComment">/// &lt;/summary&gt;</span>
+    <span class="CsharpComment">/// &lt;returns&gt;True if current state can be replaced by another. False otherwise.&lt;/returns&gt;</span>
+    <span class="CsharpModifier">public</span> <span class="CsharpValueType">bool</span> CanBeInterruptedBy(UpgradeIdentifier stateID) { <span class="CsharpStatement">return</span> <span class="CsharpKeyword">true</span>; }
+
+    <span class="CsharpComment">/// &lt;summary&gt;</span>
+    <span class="CsharpComment">/// Checks if the state can be entered. </span>
+    <span class="CsharpComment">/// Don&#39;t check on the current state here. CanBeInterruptedBy() should be used to handle state interactions instead. </span>
+    <span class="CsharpComment">/// This is a good place to ensure that IsGrounded is the value that you need it to be.</span>
+    <span class="CsharpComment">/// &lt;/summary&gt;</span>
+    <span class="CsharpComment">/// &lt;returns&gt;True if current state can be entered. False otherwise.&lt;/returns&gt;</span>
+    <span class="CsharpModifier">public</span> <span class="CsharpValueType">bool</span> CanBeEntered() { <span class="CsharpStatement">return</span> <span class="CsharpKeyword">true</span>; }
+}</span></pre>

@@ -29,18 +29,26 @@
 
 		<img src="/images/projects/molementum/logo.png" alt="Molementum" draggable="false" class="float-title">
 
-		<div class="flexrow">
+		<div class="flexrow" style="align-items:flex-start">
 
 			<div class="flexcolumn" style="flex:2;">
-				<iframe height="400vh" src="https://www.youtube.com/embed/AisxeZa15RQ?si=-A_JDascbIYUrjLU"
+				<iframe height="500vh" src="https://www.youtube.com/embed/AisxeZa15RQ?si=-A_JDascbIYUrjLU"
 				title="Molementum Trailer" frameborder="0"
 				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 				referrerpolicy="strict-origin-when-cross-origin" 
 				style="flex: auto;" allowfullscreen></iframe>
 				
-				<p class="text-column" style="flex:auto">
+				<p class="text-column" style="flex:auto; margin-bottom: 0;">
 					Molementum is a 3D party action game where you assume the role of a mole criminal to rob mines of their precious gems. Grab up to 3 friends and scramble your way through mines while engaging in various acts of competitive mischief as you try to become the most notorious mole criminal.
 				</p>
+
+				<div class="highlight flexrow" style="padding: 1%;">
+					<h4>Jump to sections:</h4>
+					<a href="/projects/molementum.html#Networking"><div class="button">Networking</div></a>
+					<a href="/projects/molementum.html#Modular Systems"><div class="button">Modular Systems</div></a>
+					<a href="/projects/molementum.html#Game Architecture"><div class="button">Game Architecture</div></a>
+
+				</div>
 			</div>
 			
 			<div class="infobox no-top-margin">
@@ -50,7 +58,7 @@
 			</div>
 		</div>
 
-		<h1>Networking</h1>
+		<h1 id="Networking">Networking</h1>
 
 		<div class="flexrow">
 
@@ -112,6 +120,7 @@
 				<img class="diagram" draggable=false src="/images/projects/molementum/lobbyManager.png">
 			</div>
 
+			<h2>Code Structure</h2>
 			<div class="flexrow">
 				<div element-import filePath="/elements/molementum/lobbyManagerCodeBlock.html"></div>
 
@@ -133,23 +142,118 @@
 					<p>
 						This snippet also demonstrates use of asynchronous methods and .NET Tasks. 
 					</p>
+					<br><br><br><br><br>
 				</div>
+			</div>
+		</div>
+
+		<!--
+		<div class="infobox">
+			<h1>Gameplay Synchronization</h1>
+			
+			<h2>Player Syncing</h2>
+			<div>
+				<p>
+					All Player network syncing behavior is handled by the PlayerNetworker class. For the local player object, the PlayerNetworker acts as an event observer.  
+					State updates (in the PlayerStateMachine component) are sent immediately. Certain updates, such as spammable abilities, are deferred, such that they are sent grouped in one RPC call during each game update.	
+				</p>
+				<p>
+				</p>
+				<p>
+					Player position is handled by Unity's NetworkTransform component. Velocity and acceleration are synced each update to enable client-side prediction.
+				</p>
+			</div>
+
+			<h2>Game World</h2>
+
+		</div>
+		-->
+
+		<h1 id="Modular%20Systems">Modular Systems</h1>
+		<p>
+			Molementum contains many interlocking systems, such as tiered
+			upgrades, complex physics-based movement, and dynamic
+			gameplay objectives. It was my responsibility to create the backend for these
+			systems in a way that enabled a decoupled codebase and synergistic gameplay.
+		</p>
+
+		<div class="infobox">
+			<h1>Tiered Upgrades Backend</h1>
+
+			<p>
+				Players obtain upgrades for their mole at the beginning of each round of gameplay. These upgrades vary greatly in behavior and occasionally synergize with each other. 
+			</p>
+
+			<h2>Upgrade Behavior Types as Interfaces</h2>
+
+			<div class="flexrow">
+				<div class="flexcolumn">
+					<p>
+						Upon discussion with designers and consideration of design documentation, I divided upgrade functionality into 3 categories: Active, Passive, and State. Some upgrades required behavior linked to multiple categories, which led me to decide to utilize interfaces to represent each category.
+						The interfaces indicate the required functions for the desired upgrade, while the Upgrade class contains backend functionality for setup, cooldowns, transmitting events, and more. All interface methods are exclusively called by the Upgrade base class.
+					</p>
+
+					<p>
+						Part of the reason for this approach was to enable the use of a finite state machine within the player controller. During early prototyping, another programmer had developed a system which required two separate classes for each state-linked upgrade. Through discussion with the programming team, we designed this structure that would allow one script to act as both an Upgrade and a State. 
+					</p>
+				</div>
+				<img class="diagram" draggable=false style="padding-top: 10px;" src="/images/projects/molementum/upgrades.png">
+			</div>
+			<div class="flexrow">
+				<div element-import filePath="/elements/molementum/stateCodeBlock.html"></div>
+
+				<div class="text-column">
+					<p>
+						This is the entirety of the IState interface. The comments are verbose to help enable code-proficient designers to implement upgrades themselves.
+					</p>
+
+					<br><br>
+
+					<p>
+						The IState interface is divided into state machine functions, and state validation functions.
+					</p>
+					<br><br><br>
+					<br><br><br>
+					<br><br><br>
+					<br><br><br>
+					<br><br><br>
+					<p>
+						ShouldRemainCurrentState and CanBeEntered are separate functions primarily to facilitate states that initiate by launching the character from the ground and continue until landing.
+					</p>
+					<br><br><br>
+					<br><br><br>
+
+				</div>
+			</div>
+
+			<h2>Quick Templates Development Tool</h2>
+			<div class="flexrow">
+
+				<div class="text-column">
+					<p>To better facilitate rapid development of upgrades, I created a tool to automatically generate a script that indicates what needs to be implemented. The tool also creates a linked ScriptableObject, which is useful for tweaking values in SerializeFields.</p>
+					<p>The script on the right of this is a script generated with the requested interfaces: IActive and IPassive.</p>
+
+					<p>I also created a <a href="https://docs.google.com/presentation/d/1gEkKUVucDZRayLq1_lUWWUoM-KGudvVQ2M4dpWDljWU/edit?usp=sharing">detailed presentation</a> to explain the intracacies involved with creating new upgrades. Designers and programmers both told me they greatly appreciated this level of communication.</p>
+				</div>
+				<div element-import filePath="/elements/molementum/derivedUpgradeCodeBlock.html"></div>
 
 			</div>
 
-
 		</div>
 
-		<h1>Modular Systems</h1>
-		TODO
-
-		<h1>Game Architecture</h1>
-		TODO
+		<h1 id="Game%20Architecture">Game Architecture</h1>
+		
+		<div class="infobox">
+			<h1>Player Systems</h1>
+		</div>
+		<div class="infobox">
+			<h1>Game Management</h1>
+		</div>
 
 
 		<div id="credits" class="infobox">
 			<h1>Credits</h1>
-			<div class="flexrow">
+			<div class="flexrow" style="align-items:flex-start;">
 				<div>
 					<h2>Designers</h2>
 					<p><a href="https://www.johnodell.net/">John Odell</a></p>
