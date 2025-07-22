@@ -25,7 +25,7 @@ const projects = [
       "Configured Unity HDRP for volumetric lighting",
     ],
     dates: "Jan 2023 - May 2023",
-    pageURL:"agripocalypse.html"
+    pageURL:""
   },
   {
     title: "VizBoXR",
@@ -36,7 +36,7 @@ const projects = [
       "R&D with GoogleARCore, SteamVR, and Oculus"
     ],
     dates: "June 2022 - Dec 2022",
-    pageURL:"vizboxr.html"
+    pageURL:""
   },
   {
     title: "Space Junk Janitor Simulator 2222",
@@ -47,7 +47,7 @@ const projects = [
       "Dynamic mini-map that is auto-generated for each level"
     ],
     dates: "April 2022 - May 2022",
-    pageURL:"sjjs.html"
+    pageURL:""
   },
   {
     title: "Fashion For All",
@@ -58,7 +58,7 @@ const projects = [
       "Dynamically generated UI"
     ],
     dates: "Feb 2022 - March 2022",
-    pageURL:"ffa.html"
+    pageURL:""
 
   },
   {
@@ -71,7 +71,7 @@ const projects = [
       "Little frogs that follow the player :)"
     ],
     dates: "Jan 2022 - Feb 2022",
-    pageURL:"froggo.html"
+    pageURL:""
   },
 ];
 
